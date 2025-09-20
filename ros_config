@@ -1,1 +1,9 @@
+lidar:
+  frame_id: "laser"
+  angle_compensate: true
+  scan_mode: "Standard"
+  min_angle: -3.14   # radians (-180 deg)
+  max_angle: 3.14    # radians (+180 deg)
+  range_min: 0.15    # meters
+  range_max: 6.0     # meters
 
