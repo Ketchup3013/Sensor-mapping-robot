@@ -1,0 +1,11 @@
+<launch>
+  <!-- Start RPLIDAR node -->
+  <node name="rplidar" pkg="rplidar_ros" type="rplidarNode" output="screen">
+    <param name="serial_port" value="/dev/ttyUSB0"/>
+    <param name="serial_baudrate" type="int" value="115200"/>
+    <param name="frame_id" value="laser"/>
+  </node>
+
+  <!-- Hector SLAM node -->
+  <include file="$(find hector_slam_launch)/launch/mapping_default.launch"/>
+</launch>
