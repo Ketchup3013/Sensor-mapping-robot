@@ -1,1 +1,24 @@
+<launch>
+  <!-- Start RPLIDAR node -->
+  <node name="rplidarNode" pkg="rplidar_ros" type="rplidarNode" output="screen">
+    <!-- Port to which the RPLIDAR is connected -->
+    <param name="serial_port" type="string" value="/dev/ttyUSB0"/>
+    <!-- Baud rate for RPLIDAR A1 -->
+    <param name="serial_baudrate" type="int" value="115200"/>
+    <!-- Frame name -->
+    <param name="frame_id" type="string" value="laser"/>
+    <!-- Angle compensation for better scan matching -->
+    <param name="angle_compensate" type="bool" value="true"/>
+  </node>
+</launch>
+
+<launch>
+  <!-- Launch Hector Mapping -->
+  <include file="$(find hector_slam_launch)/launch/mapping_default.launch"/>
+
+  <!-- Optional: Start RViz automatically -->
+  <!--
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_slam_launch)/rviz_cfg/mapping_demo.rviz"/>
+  -->
+</launch>
 
