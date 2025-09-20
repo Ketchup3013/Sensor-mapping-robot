@@ -33,6 +33,16 @@ The project integrates **RPLIDAR A1, Raspberry Pi 4, Arduino motor control, and 
 
 ---
 
+## RPLIDAR Setup
+This project uses the [rplidar_ros](https://github.com/Slamtec/rplidar_ros) package.  
+To install:  
+```bash
+cd ~/catkin_ws/src
+git clone https://github.com/Slamtec/rplidar_ros.git
+cd ..
+catkin_make
+```
+
 ## 🚀 How to Run
 1. Clone this repo:
    ```bash
